@@ -40,7 +40,7 @@ print("bal")
 
 #         BIBHU
 print("Hello World!")
-name = input("Enter your name: ")
+name = input("Enter your name ")
 print(f"{name}")
 
 
