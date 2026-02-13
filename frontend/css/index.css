@@ -24,9 +24,15 @@ body {
   transform: translateY(-5px);
 }
 
-.login-container h2 {
+.login-container h1 {
+  font-size: 35px;
   margin-bottom: 20px;
   color: #2e7d32; /* rich green for finance theme */
+}
+
+.login-container p {
+  font-size: 14px;
+  color: #1c1c1c;
 }
 
 .input-field {
