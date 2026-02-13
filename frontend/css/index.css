@@ -20,6 +20,14 @@ body {
   transition: transform 0.3s ease;
 }
 
+.form-box{
+  display: none;
+}
+
+.form-box.active {
+  display: block;
+}
+
 .login-container:hover {
   transform: translateY(-5px);
 }
