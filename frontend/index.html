@@ -10,11 +10,11 @@
 <body>
   <div class="login-container">
     <div class="form-box active" id = "login-form">
-        <form action="">
+        <form>
             <h1>Login</h1>
-            <input type="text" class="input-field" placeholder="Username" required>
-            <input type="password" class="input-field" placeholder="Password" required>
-            <button type="submit" class="btn">Login</button>
+            <input type="text" class="input-field" id="username" placeholder="Username" required>
+            <input type="password" class="input-field" id="password" placeholder="Password" required>
+            <button class="btn">Login</button>
         </form>
     <div class="links">
       <p>Don't have an account? <a href="#" onclick="showForm('register-form')">Register</a> </p>
@@ -24,20 +24,20 @@
     <div class="form-box" id = "register-form">
         <form>
             <h1>Register</h1>
-            <input type="text" class="input-field" placeholder="Username" required>
-            <input type="password" class="input-field" placeholder="Password" required>
-            <input type="email" class="input-field" placeholder="Email" required>
-            <select class="input-field" required>
+            <input type="text" class="input-field" placeholder="username" id="reg-username" required>
+            <input type="password" class="input-field" placeholder="Password" id="reg-password" required>
+            <input type="email" class="input-field" placeholder="Email">
+            <select class="input-field">
                 <option value="" disabled selected>Select Role</option>
                 <option value="student">Student</option>
                 <option value="admin">Admin</option>
             </select>
-            <button type="submit" class="btn">Register</button>
+            <button type="button" class="btn" onclick="register()">Register</button>
         </form>
-    <div class="links">
-      <p>Already have an account? <a href="#" onclick="showForm('login-form')">Login</a> </p>
+        <div class="links">
+          <p>Already have an account? <a href="#" onclick="showForm('login-form')">Login</a> </p>
+        </div>
     </div>
-  </div>
 
   <script src="javascript/index.js"></script>
 </body>
