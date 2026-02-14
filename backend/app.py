@@ -25,12 +25,13 @@ def register():
 
     username = data["username"]
     password = data["password"]
+    email = data["email"]
 
-    print(username, password)
+    print(username, password, email)
     
     cursor = db.cursor()
     
-    cursor.execute("insert into users(name,password) values(%s,%s)", (username,password))
+    cursor.execute("insert into users(name,password,email) values(%s,%s,%s)", (username,password,email) )
     db.commit()
     cursor.close()
     
