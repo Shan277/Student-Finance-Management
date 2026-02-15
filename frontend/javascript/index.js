@@ -16,9 +16,7 @@ async function register() {
     alert("Please fill all the fields");
     return;
   }
-
   
-
   console.log("USERNAME:", username);
   console.log("PASSWORD:", password);
   console.log("EMAIL:", email);
@@ -32,10 +30,22 @@ async function register() {
       username: username,
       password: password,
       email: email
-    })
+    }),
+
+    credentials: "include" //include credentials (cookies) in the request to maintain session
+
   })//return response object and we need to extract the text from it
+
+
   let data = await res.text();//get the response as text as res is response object and we need to extract the text from it
   alert(data);//show the response in an alert box
-  window.location.href = "dashboard.html";
+
+  
+  if(data === "Registered Successfully"){  //if registration is successful, then redirect to dashboard
+
+      window.location.href = "dashboard.html";
+      
+  }
 }
+
 

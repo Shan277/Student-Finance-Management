@@ -3,7 +3,7 @@ from flask_cors import CORS
 import mysql.connector
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, supports_credentials=True) #allows cross-origin requests with credentials (cookies, authorization headers, etc.)
 app.secret_key = "secret123"
 
 db = mysql.connector.connect(
@@ -37,15 +37,23 @@ def register():
     print("USER FOUND:", user)
     if user!= None:
         return "Username already exists"
-    
 
     cursor.execute("insert into users(name,password,email) values(%s,%s,%s)", (username,password,email) )
     db.commit()
     cursor.close()
     
-    session["user"] = username
+    session["user"] = username #saves user in browser session session = {"user": "username"}
     
     return "Registered Successfully"
+
+@app.route("/check_login")
+def check_login():
+    if "user" in session: #checks if user is logged in by checking if "user" exists in session dictionary
+        print("USER IN SESSION:", session["user"])
+        return "OK"
+    print("NO USER IN SESSION")
+    return "NO"
+
 
 if __name__ == "__main__":
     app.run(debug=True)
