@@ -31,7 +31,7 @@ def login():
     
     
     session["user"] = username 
-    return "Login successful"
+    return "Login Successful"
 
 
 
