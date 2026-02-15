@@ -7,9 +7,17 @@ function showForm(id) {
 
 async function register() {
 
+
   let username = document.getElementById("reg-username").value;
   let password = document.getElementById("reg-password").value;
   let email = document.getElementById("reg-email").value;
+
+  if(username === "" || password === "" || email === ""){
+    alert("Please fill all the fields");
+    return;
+  }
+
+  
 
   console.log("USERNAME:", username);
   console.log("PASSWORD:", password);
@@ -28,4 +36,6 @@ async function register() {
   })//return response object and we need to extract the text from it
   let data = await res.text();//get the response as text as res is response object and we need to extract the text from it
   alert(data);//show the response in an alert box
+  window.location.href = "dashboard.html";
 }
+
