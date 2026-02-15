@@ -14,6 +14,27 @@ db = mysql.connector.connect(
 )
 
 
+@app.route("/login", methods=["POST"])
+
+def login():
+    
+    username = request.form["username"]
+    password = request.form["password"]
+    
+    cursor = db.cursor()
+    cursor.execute("select * from users where name = %s and password = %s", (username,password))
+    user = cursor.fetchone()
+    print(user)
+    
+    if user == None:
+        return "Invalid username or password"
+    
+    
+    session["user"] = username 
+    return "Login Successful"
+
+
+
 
 @app.route("/register", methods=["POST"])
 def register():
@@ -44,7 +65,9 @@ def register():
     
     session["user"] = username #saves user in browser session session = {"user": "username"}
     
-    return "Registered Successfully"
+    return "Registered Successful"
+
+
 
 @app.route("/check_login")
 def check_login():

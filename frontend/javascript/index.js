@@ -5,14 +5,36 @@ function showForm(id) {
   newform.classList.add('active');
 }
 
+async function login(){
+  let formData = new FormData(document.getElementById("loginForm")); //create a FormData object from the login form to easily extract form data
+  let username = formData.get("username").trim(); //get the username from the form data and trim any whitespace
+  let password = formData.get("password").trim(); //get the password from the form data and trim any whitespace
+      if(username === "" || password === ""){
+        alert("Please fill all the fields");
+        return;
+      }
+  console.log(formData.get("username"));
+  console.log(formData.get("password"));
+  let res = await fetch("http://127.0.0.1:5000/login", {
+    method: "POST",
+    body : formData,
+    credentials: "include"
+})
+  let data = await res.text();
+  alert(data);
+  if(data === "Login Successful"){
+      window.location.href = "dashboard.html";
+  }
+}
+
+
+
 async function register() {
-
-
   let username = document.getElementById("reg-username").value;
   let password = document.getElementById("reg-password").value;
   let email = document.getElementById("reg-email").value;
 
-  if(username === "" || password === "" || email === ""){
+  if(username.trim() === "" || password.trim() === "" || email.trim() === ""){
     alert("Please fill all the fields");
     return;
   }
@@ -41,7 +63,7 @@ async function register() {
   alert(data);//show the response in an alert box
 
   
-  if(data === "Registered Successfully"){  //if registration is successful, then redirect to dashboard
+  if(data === "Registered Successful"){  //if registration is successful, then redirect to dashboard
 
       window.location.href = "dashboard.html";
       
