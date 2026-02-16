@@ -77,6 +77,12 @@ def check_login():
     print("NO USER IN SESSION")
     return "NO"
 
+@app.route("/logout")
+def logout():
+    removed_user = session.pop("user", None)
+    print("USER LOGGED OUT: ", removed_user)
+    return "logged out"
 
 if __name__ == "__main__":
     app.run(debug=True)
+    

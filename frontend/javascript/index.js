@@ -70,4 +70,16 @@ async function register() {
   }
 }
 
+async function checkLogin(){
+  let res = await fetch("http://127.0.0.1:5000/check_login",{
+    credentials: "include"
+  });
+  let data = await res.text();
+  if (data === "OK"){
+    alert("User already logged in");
+    window.location.href = "dashboard.html";
+  }
+}
+checkLogin();
+
 
