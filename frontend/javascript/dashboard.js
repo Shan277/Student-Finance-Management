@@ -1,3 +1,9 @@
+function profile_menu(){
+  let active_menu = document.querySelector(".profile-menu");
+  active_menu.classList.toggle("active");
+}
+
+
 async function check_login(){
   let res = await fetch("http://127.0.0.1:5000/check_login", {
     credentials: "include"
