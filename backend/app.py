@@ -7,10 +7,10 @@ CORS(app, supports_credentials=True) #allows cross-origin requests with credenti
 app.secret_key = "secret123"
 
 db = mysql.connector.connect(
-    host="sql12.freesqldatabase.com",
-    user="sql12817153",
-    password="1vcreW8Ja7",
-    database="sql12817153"
+    host="localhost",
+    user="root",
+    password="799277",
+    database="register_db"
 )
 
 

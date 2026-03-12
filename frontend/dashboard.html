@@ -3,91 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <title>Dashboard</title>
-<link rel="stylesheet" href = "css/dashboard.css"> 
 </head>
+
 <body>
-<!-- TOP NAVBAR -->
-<div class="topbar">
-  <div class="logo">💰 Budget Manager</div>
 
-  <div class="nav">
-  <a class="active" href="#">🏠 Home</a>
-    <a href="#">📊 History</a>
-    <a href="#">⚙️ Options</a>
-    <a href="#" onclick="logout()">🚪 Logout</a>
-  </div>
-</div>
-
-<div class="container">
-
-<h1>Student's Budget Analyst</h1>
-
-<!-- STAT CARDS -->
-<div class="stats">
-<div class="stat">
-<h2>₹12,500</h2>
-Balance
-</div>
-
-<div class="stat">
-<h2>₹15,000</h2>
-Added
-</div>
-
-<div class="stat">
-<h2>₹2,500</h2>
-Spent
-</div>
-</div>
-
-<!-- ADD MONEY CARD -->
-<div class="card">
-<h3>➕ Add Money</h3>
-<input type="number" placeholder="💵 Enter received amount">
-</div>
-
-<!-- EXPENSE INPUTS -->
-<div class="card">
-<h3>💸 Spending Inputs</h3>
-
-<div class="categories">
-
-<div class="cat">
-🍔 Food
-<input type="number" placeholder="Amount">
-</div>
-
-<div class="cat">
-🚕 Travel
-<input type="number" placeholder="Amount">
-</div>
-
-<div class="cat">
-📚 Books
-<input type="number" placeholder="Amount">
-</div>
-
-<div class="cat">
-🏠 Rent
-<input type="number" placeholder="Amount">
-</div>
-
-<div class="cat">
-🎮 Fun
-<input type="number" placeholder="Amount">
-</div>
-
-<div class="cat">
-☕ Cafe
-<input type="number" placeholder="Amount">
-</div>
-
-</div>
-
-<button>➖ Show Analysis</button>
-</div>
-
-</div>
+<button onclick="logout()">Logout</button>
 
 <script src="javascript/dashboard.js"></script>
 
